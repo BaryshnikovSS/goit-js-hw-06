@@ -11,19 +11,14 @@ import {task_08} from './task-08.js'
 import {task_09} from './task-09.js'
 import {task_10} from './task-10.js'
 
-let inputMessage;
 
-do {
-    inputMessage = prompt('Пожалуйста, выберите номер задание от 1 до 10!');
-    console.clear();
+    let inputMessage = prompt('Пожалуйста, выберите номер задание от 1 до 10!');
 
     if (isNaN(inputMessage) || inputMessage === null) {
         if (isNaN(inputMessage)) {
             alert('Введите пожалуйста цифру!');
-            continue;
         } else {
             alert('Спасибо за выбор нашего сервиса! До свидания!');
-            break;
         }
     } else {
         inputMessage = Number(inputMessage);
@@ -73,4 +68,3 @@ do {
                 alert('Задание не выбрано! Введите номер задания!');
         }
     }
-} while (inputMessage === true);
