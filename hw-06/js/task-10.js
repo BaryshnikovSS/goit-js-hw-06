@@ -8,11 +8,10 @@ export function task_10() {
 
     const getSortedUniqueSkills = users => users.reduce((acc, user) => {
 
-        user.skills.forEach(idx => acc.includes(idx) ? false : acc.push(idx));
-
-        return acc.sort()
-
-    }, []);
+        acc.push(...user.skills);
+        return acc;
+        
+    }, []).filter((value, index, arr) => arr.indexOf(value) === index).sort();
 
     console.log(getSortedUniqueSkills(users));
     // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
